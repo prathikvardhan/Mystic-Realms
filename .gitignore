@@ -16,3 +16,7 @@ mono_crash.*.json
 # System / OS
 .DS_Store
 Thumbs.db
+
+# Web export output
+build/
+*.zip
