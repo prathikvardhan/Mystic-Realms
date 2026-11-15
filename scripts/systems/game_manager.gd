@@ -172,24 +172,19 @@ func start_level(level_num: int) -> void:
 	rebound_meter = 0.0
 	is_overdrive = false
 	
+	# Only Fireball [J] and Freeze Power [K]
+	unlocked_powers["fireball"] = true
+	unlocked_powers["ice_blast"] = true
+	unlocked_powers["lightning"] = false
+	unlocked_powers["shield"] = false
+	unlocked_powers["void_cannon"] = false
+	unlocked_powers["shadow_step"] = false
+	
 	if level_num == 0:
-		unlocked_powers["fireball"] = true
-		unlocked_powers["ice_blast"] = true
-		unlocked_powers["lightning"] = true
-		unlocked_powers["shield"] = true
 		get_tree().change_scene_to_file("res://scenes/levels/level_tutorial.tscn")
 		return
 
-	if level_num >= 2:
-		unlocked_powers["lightning"] = true
-		unlocked_powers["shield"] = true
-		
-	if level_num >= 8:
-		unlocked_powers["void_cannon"] = true
-		unlocked_powers["shadow_step"] = true
-		
-	var path = "res://scenes/levels/level_%d.tscn" % level_num
-	get_tree().change_scene_to_file(path)
+	get_tree().change_scene_to_file("res://scenes/levels/final_battle.tscn")
 
 func add_rebound(amount: float) -> void:
 	if is_overdrive:
@@ -346,54 +341,10 @@ func respawn_player() -> void:
 
 func complete_level() -> void:
 	if current_level == 0:
-		post_notification("Tutorial Complete! Entering Level 1: The Enchanted Forest...")
+		post_notification("Tutorial Grounds Conquered! Entering the Final Battle...")
 		await get_tree().create_timer(1.6).timeout
-		start_level(1)
-	elif current_level == 1:
-		max_level_unlocked = max(max_level_unlocked, 2)
-		unlock_power("lightning")
-		unlock_power("shield")
-		save_game()
-		post_notification("Level 1 Complete! Entering The Dark Castle...")
-		await get_tree().create_timer(1.6).timeout
-		start_level(2)
-	elif current_level == 2:
-		max_level_unlocked = max(max_level_unlocked, 3)
-		save_game()
-		post_notification("Level 2 Complete! Descending into The Molten Caverns...")
-		await get_tree().create_timer(1.6).timeout
-		start_level(3)
-	elif current_level == 3:
-		max_level_unlocked = max(max_level_unlocked, 4)
-		save_game()
-		post_notification("Level 3 Complete! Entering The Frozen Crypts...")
-		await get_tree().create_timer(1.6).timeout
-		start_level(4)
-	elif current_level == 4:
-		max_level_unlocked = max(max_level_unlocked, 5)
-		save_game()
-		post_notification("Level 4 Complete! Ascending The Tempest Spire...")
-		await get_tree().create_timer(1.6).timeout
-		start_level(5)
-	elif current_level == 5:
-		max_level_unlocked = max(max_level_unlocked, 6)
-		save_game()
-		post_notification("Level 5 Complete! Entering The Astral Void...")
-		await get_tree().create_timer(1.6).timeout
-		start_level(6)
-	elif current_level == 6:
-		max_level_unlocked = max(max_level_unlocked, 7)
-		save_game()
-		post_notification("Level 6 Complete! Approaching The Abyssal Throne for the Final Battle...")
-		await get_tree().create_timer(1.8).timeout
-		start_level(7)
-	elif current_level == 7:
-		max_level_unlocked = max(max_level_unlocked, 8)
-		save_game()
-		post_notification("Level 7 Complete! The Void Singularity Awakens... Entering Level 8!")
-		await get_tree().create_timer(1.8).timeout
 		start_level(8)
-	elif current_level >= 8:
+	else:
 		post_notification("👑 THE PRIMORDIAL VOID EMPEROR HAS FALLEN! SUPREME VICTORY! 👑")
 		SoundManager.play_sfx("victory")
 		save_game()

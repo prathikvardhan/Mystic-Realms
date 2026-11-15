@@ -9,19 +9,15 @@ func _ready() -> void:
 
 func _on_start_pressed() -> void:
 	SoundManager.play_sfx("click")
-	GameManager.start_level(1)
-
-func _on_intro_pressed() -> void:
-	SoundManager.play_sfx("click")
-	get_tree().change_scene_to_file("res://scenes/intro/intro_splash_3d.tscn")
+	GameManager.start_level(8)
 
 func _on_tutorial_pressed() -> void:
 	SoundManager.play_sfx("click")
 	GameManager.start_level(0)
 
-func _on_level_select_pressed() -> void:
+func _on_intro_pressed() -> void:
 	SoundManager.play_sfx("click")
-	get_tree().change_scene_to_file("res://scenes/menus/level_select.tscn")
+	get_tree().change_scene_to_file("res://scenes/intro/intro_splash_3d.tscn")
 
 func _on_quit_pressed() -> void:
 	SoundManager.play_sfx("click")

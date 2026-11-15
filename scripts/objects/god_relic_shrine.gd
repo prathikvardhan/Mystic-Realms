@@ -35,12 +35,8 @@ func activate_shrine() -> void:
 	GameManager.player_health_changed.emit(GameManager.player_hp, GameManager.player_max_hp)
 	GameManager.player_mana_changed.emit(GameManager.player_mp, GameManager.player_max_mp)
 	
-	# Unlock Ultimate Powers
-	GameManager.unlock_power("void_cannon")
-	GameManager.unlock_power("shadow_step")
-	
-	GameManager.pop_floating_text("✦ GOD RELIC AWAKENED! +1500 HP & POWERS! ✦", global_position + Vector2(0, -50), Color(1.0, 0.9, 0.2))
-	GameManager.post_notification("👑 SECRET ROOM DISCOVERED! ULTIMATE GOD POWERS UNLOCKED! 👑")
+	GameManager.pop_floating_text("✦ GOD RELIC AWAKENED! +1500 HP & GODLY SPELL POWER! ✦", global_position + Vector2(0, -50), Color(1.0, 0.9, 0.2))
+	GameManager.post_notification("👑 SECRET ROOM DISCOVERED! ULTIMATE GOD STATS AWAKENED! 👑")
 	
 	_set_activated_visuals()
 

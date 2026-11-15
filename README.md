@@ -1,191 +1,140 @@
 # 🧙‍♂️ MYSTIC REALMS: BOUNCE BACK
-### The Power of Magic — 8 Levels & 8 Bosses Ultimate Edition
+### Tutorial Grounds & Final Battle Edition
 **Created by Dhoni and Prathik**
 
-A complete, polished fantasy action adventure platformer built in **Godot 4.x**, deeply integrating the Game Jam theme **"BOUNCE BACK"** across combat, platforming mobility, risk-reward loop, and progression. Features a full realistic 30-second dark-to-light 3D animated cinematic entry sequence, prominent developer showcase for **Dhoni & Prathik**, the epic anthem **"Lord of the Mysteries - Dark Dream" by Curley Gao**, 8 full playable levels, 8 formidable boss encounters (including the rebalanced 10,000 HP Primordial Void Emperor with active multi-phase attacks!), and persistent death/respawn statistics!
+A complete, polished fantasy action-adventure platformer built in **Godot 4.x**, deeply integrating the Game Jam theme **"BOUNCE BACK"** across physics-driven combat, mobility, risk-reward loops, and progression. Features a realistic 30-second dark-to-light 3D choreographed cinematic entry sequence, prominent developer showcase for **Dhoni & Prathik**, the epic anthem **"Lord of the Mysteries - Dark Dream" by Curley Gao**, an interactive tutorial, and the extended **Final Battle** against the 10,000 HP 4-phase Primordial Void Emperor!
 
 ---
 
 ## 🎬 3D Entry Animation & Credits (Realistic Dark-to-Light 30s Sequence)
-- **Cinematic 3D Opening Scene (~30-Second Choreographed Showcase):** (`scenes/intro/intro_splash_3d.tscn`)
-  - **Dynamic Progressive Lighting Transition:**
+- **Cinematic 3D Opening Scene (`scenes/intro/intro_splash_3d.tscn`):**
+  - **Dynamic Lighting Transition:**
     - Begins in pure mysterious pitch darkness where only the purple orb on the archmage's staff casts mystical point light on his silhouette.
     - Progressively brightens through overhead stage spotlights and soft ambient illumination as the wizard taps the ground.
-    - Fully illuminates into a brilliant realistic 3D arena with metallic reflections on celestial rings, marble dais highlights, and dramatic cosmic rim lighting.
-  - **Player Wand Dance & Spell Shooting Choreography:**
+    - Fully illuminates into a brilliant realistic 3D arena with metallic reflections on celestial rings, marble dais highlights, and cosmic rim lighting.
+  - **Player Wand Dance & Spell Choreography:**
     - Hooded archmage performs rhythmic dancing steps, 360° pirouette spins, leaps, and wand flourishes.
-    - Fires dynamic bouncing spell volleys (solar fireballs, ice bolts, cross-volley ricochets, and skyward Astral Void beams) that reflect in 3D off celestial rings with pitch-escalating crystalline chimes and fireworks.
-  - **Ultra-Prominent Developer Showcase (Dhoni & Prathik):**
-    - High-visibility vector typography (`cinematic_black.ttf` & `cinematic_bold.ttf`) with 24px deep contrast outlines, linear mipmap filtering, and billboard rendering for razor-sharp legibility.
-    - Features dedicated multi-tiered developer spotlight nodes:
+    - Fires dynamic bouncing spell volleys that reflect in 3D off celestial rings with pitch-escalating crystalline chimes and fireworks.
+  - **Developer Showcase (Dhoni & Prathik):**
+    - High-visibility vector typography (`cinematic_black.ttf` & `cinematic_bold.ttf`) with deep contrast outlines and billboard rendering for razor-sharp legibility.
+    - Dedicated developer spotlight nodes:
       - `★ GAME DEVELOPERS ★` (Gold shimmering header)
-      - `DHONI & PRATHIK` (Giant 60pt font, high-contrast cyan with golden outline)
+      - `DHONI & PRATHIK` (High-contrast cyan with golden outline)
       - `✦ CREATED BY DHONI AND PRATHIK ✦`
   - **5-Act Choreographed Timeline:**
     - **Act 1 (0.0s–6.0s): The Dark Silhouette** — Pitch black stage; only glowing purple staff orb illuminates wizard dancing with mystical wand flourishes.
-    - **Act 2 (6.0s–12.0s): The Dawn of Light** — Staff tap ignites overhead spotlight and soft ambient glow; wizard dances with twin fireballs; reveals `✦ MYSTIC REALMS • THE POWER OF MAGIC ✦`.
-    - **Act 3 (12.0s–19.0s): Full Arena Illumination** — Sun, rim, and stage lights engage fully; high pirouette leap, 4-way cross-volley ricochets off metallic rings; monumental bounce-drop of `GAME: BOUNCE BACK`.
-    - **Act 4 (19.0s–26.0s): Dedicated Developer Spotlight** — Skyward Astral Void beam bursts into fireworks; spotlights center directly onto `★ GAME DEVELOPERS ★ DHONI & PRATHIK`.
-    - **Act 5 (26.0s–30.0s): Triumphant Victory Pose** — Radiant victory stance with glowing wand aura, pulsing `[ PRESS SPACE / ENTER / CLICK TO PLAY ]` prompt, and smooth auto-transition to Main Menu at 30.0s (or instant skip on any key/click).
+    - **Act 2 (6.0s–12.0s): The Dawn of Light** — Staff tap ignites overhead spotlight and soft ambient glow; reveals `✦ MYSTIC REALMS • THE POWER OF MAGIC ✦`.
+    - **Act 3 (12.0s–19.0s): Full Arena Illumination** — Sun, rim, and stage lights engage fully; high pirouette leap, cross-volley ricochets off metallic rings; monumental bounce-drop of `GAME: BOUNCE BACK`.
+    - **Act 4 (19.0s–26.0s): Dedicated Developer Spotlight** — Skyward spell burst with fireworks; spotlights center directly onto `★ GAME DEVELOPERS ★ DHONI & PRATHIK`.
+    - **Act 5 (26.0s–30.0s): Triumphant Stance** — Radiant victory stance with glowing wand aura, pulsing `[ PRESS SPACE / ENTER / CLICK TO PLAY ]` prompt, and smooth transition to Main Menu (or instant skip on any key/click).
 
 ---
 
-## 💀 Persistent Death & Respawn Tracking System
-- **Real-Time HUD Counter:** Live display on the HUD (`💀 Deaths: X  |  🔄 Respawns: Y`) tracking the player's run.
-- **Game Over & Victory Screens:** Shows run death and respawn stats immediately when falling in battle or triumphing over the final emperor.
-- **Career Stats on Main Menu:** Overall career deaths and respawns persist seamlessly in `user://mystic_realms_save.json` across play sessions.
+## 🎮 Game Architecture: Two Dedicated Modes
+
+### 1. ✨ Tutorial Grounds (`scenes/levels/level_tutorial.tscn`)
+- Interactive signposts introducing core controls and mechanics:
+  - **Sign 1 (Movement):** Walk with `[A]` / `[D]`, jump with `[Space]` or `[W]`.
+  - **Sign 2 (Casting & Ricochet):** Fireball `[J]` or Left-Click, Freeze Power `[K]`, wall ricochet mechanics ($1\times \to 2\times \to 3\times$ damage).
+  - **Sign 3 (Rocket Jumping):** Leap into the air, aim downward with mouse or `[S]`, and cast Fireball to launch skyward over high stone walls!
+  - **Sign 4 (Chasm Air-Boost):** Jump forward over chasms and shoot downward in mid-air to gain height and forward momentum.
+  - **Sign 5 (Portal):** Step through the ancient portal to enter the Final Battle.
+
+### 2. ⚔️ The Final Battle (`scenes/levels/final_battle.tscn`)
+- **Extended High-Stakes Platforming:**
+  - 4 distinct celestial void platforming zones with floating ruins and moving platforms.
+  - 3 progression checkpoints and 3 ruined shrines.
+  - Deadly spiked pits, flying bats, shadow monsters, and fire demons.
+- **The Ancient Astral Sanctum (Secret Room):**
+  - Hidden behind a destructible secret wall (`scenes/objects/secret_wall.tscn`).
+  - Contains astral crystals and the **God Relic Shrine** (`scenes/objects/god_relic_shrine.tscn`), which bestows **$+1,500$ Max HP**, **$+500$ Max MP**, accelerated mana regeneration, and **$+60\%$ spell damage**!
+- **The Ultimate Boss Arena:**
+  - Confront the **Primordial Void Emperor Malakor** (10,000 HP).
 
 ---
 
-## 🎵 Featured Soundtrack
-- **Main Anthem:** *"Curley Gao - Lord Of Mysteries - Dark Dream"* (`assets/music/dark_dream.mp3`)
-  - Loops continuously and seamlessly across the Main Menu, Level Select, all 7 Levels, and all 7 Boss Battles!
+## 👑 The Boss: Primordial Void Emperor Malakor (10,000 HP)
+- **4-Phase Transformation System:**
+  - **Phase 1 (10,000 – 7,500 HP):** Obsidian Void Armor with Deep Violet Aura. Teleports and fires tracking dark energy orbs.
+  - **Phase 2 (7,500 – 5,000 HP):** Crimson Void Surge with glowing red eye flares & fire trail. High-speed dash attacks (850 px/s), electric stun shockwaves, minion summons.
+  - **Phase 3 (5,000 – 2,500 HP):** Astral Cosmic Electric Cyan with celestial wings. Deploys a 1,000 HP protective hexagonal void barrier, full-screen dark energy beam, dark siphon health regeneration (+350 HP/tick).
+  - **Phase 4 (2,500 – 0 HP):** Supreme Apocalyptic Rage Mode. Solar Gold aura, 550 px/s sprint speed, massive screen-shaking void explosions, 14-orb spiral bullet hell, and relentless rage roaring.
+- **Dedicated Boss Health Bar:** Real-time health, percentage, and dynamic phase badges (`[PHASE 1]` to `[PHASE 4: ULTIMATE RAGE]`).
 
 ---
 
-## ⚡ 5 "BOUNCE BACK" SYSTEMS INTEGRATED ACROSS ALL 7 LEVELS
+## ⚡ Core Combat & "BOUNCE BACK" Mechanics
 
-### 1. 🔄 Ricochet & Deflection Combat (Core Offense)
-- **Wall & Floor Ricochet:** Player fireballs and frost blasts bounce off walls, floors, ceilings, and obstacles up to 3 times (5 times during Overdrive).
-- **Multiplier Damage Scaling:** Each bounce multiplies projectile damage ($1\times \to 2\times \to 3\times$) and accelerates speed (+15% per bounce).
-- **Dynamic Visuals & Audio:** Each consecutive wall bounce shifts color glow (Amber $\to$ Electric Cyan $\to$ Prismatic Magenta $\to$ Solar Gold) with pitch-escalating crystalline pings and floating combo feedback (`"2x BOUNCE!"`, `"3x BOUNCE!"`).
-- **Timed Parry & Deflect:** Press **Right-Click** or **[Shift] / [I]** right before an enemy projectile strikes to parry it away! Bounces enemy shots right back at them with **$3\times$ speed**, **$3\times$ damage**, stun/freeze, screen hit-stop, and +35% Rebound energy.
+### 1. 🔮 Fireball `[J]` or Left-Click (Ricochet & Rocket Jump)
+- **Wall & Floor Ricochet:** Projectiles bounce up to 3 times off surfaces.
+- **Damage Scaling:** Each bounce multiplies damage ($1\times \to 2\times \to 3\times$).
+- **Rocket-Jumping:** Aim downward with the mouse or hold `[S]` while casting to launch high into the air via explosion recoil (`velocity.y <= -420 px/s`).
 
-### 2. 🚀 Magical Recoil Movement (Platforming Mobility)
-- **Rocket-Jumping / Boost Impulse:** Aiming downward with the mouse or holding **[S]** while firing applies a vertical impulse force (`velocity.y <= -420 px/s`), allowing wizards to rocket-jump across wide bottomless chasms and leap up to high secret ledges.
-- **Horizontal Recoil:** Firing horizontally pushes the player backward to evade enemy charges or quickly kite away from danger.
+### 2. ❄️ Freeze Power / Ice Blast `[K]`
+- Launches a concentrated frost orb that chills and freezes enemies solid for 4.0 seconds, disabling their attacks and movement.
 
-### 3. 💥 Damage-to-Power "Rebound" Meter (Risk-Reward Loop)
-- **Rebound Fueling:** Taking damage (+25%) or surviving near-misses (+12%) fills the glowing HUD Rebound Meter.
-- **Overdrive Shockwave:** When the meter reaches 100%, pressing **[Q]** triggers **Rebound Overdrive**:
-  - Unleashes a radial magical shockwave dealing 60 damage and knocking back all nearby enemies (220px).
-  - Enters a **5-second Overdrive state** with radiant golden aura, rapid-fire casting (0.10s cooldown), **5-bounce mega ricochets**, and free mana casting.
+### 3. 🛡️ Timed Parry & Projectile Deflection
+- Press **Right-Click** or **[Shift]** right before an enemy projectile hits.
+- Deflects incoming missiles directly back at foes with **$3\times$ speed**, **$3\times$ damage**, and an immediate stun!
 
-### 4. 🏛️ "From Ashes to Power" Progression Hook
-- **Starting Banners in Every Level:** Every level opens with an atmospheric **BOUNCE BACK** intro banner with mission briefings and theme tips.
-- **Ruined Shrines:** Dormant ancient stone shrines scattered throughout all 7 levels "bounce back" to life when struck by ricocheted spells, granting permanent stat buffs (+Max HP, +Movement Speed, +Rebound Rate).
-
-### 5. ✨ Game Jam Juice & Feedback
-- **Hit-Stop Freeze Frames:** Deflections, high-bounce critical hits, and Overdrive shockwaves trigger crisp micro freeze frames (0.05x time scale for 0.06s).
-- **Pitch-Escalating Audio:** Wall bounces escalate in pitch dynamically with each bounce.
-- **Floating Combo Text:** In-world rising combo popups (`"2x BOUNCE!"`, `"DEFLECTED 3x!"`, `"REBOUND OVERDRIVE!"`, `"BOOST!"`, `"SHRINE RESTORED!"`).
+### 4. 🏛️ Ruined Shrines
+- Dormant stone shrines awaken when struck by spells, permanently increasing Max HP (+30) or Movement Speed (+25).
 
 ---
 
-## 🗺️ 7 PLAYABLE REALMS & FORMISTABLE BOSSES
+## 🕹️ Controls Reference
 
-### 🌲 Level 1: The Enchanted Forest
-- **Atmosphere:** Twilight purple skies, glowing mushrooms, floating mossy platforms.
-- **Boss:** **Corrupted Shadow Behemoth** (500 HP)
-- **Attacks:** Deflectable Shadow Spores (parry back for 3x damage!), Ground Slam Shockwave, Ferocious Trample Charge.
-
-### 🏰 Level 2: The Dark Castle
-- **Atmosphere:** Blood moon, gothic castle spires, deadly spike traps, and lava pits.
-- **Boss:** **Dark Wizard - Lord of Shadows** (750 HP)
-- **Attacks:** 3-to-5 Dark Orb barrages (deflectable!), Teleport Ambush, Shadow Bat minions.
-
-### 🌋 Level 3: The Molten Caverns
-- **Atmosphere:** Deep subterranean magma caverns, boiling lava waterfalls, volcanic rock.
-- **Boss:** **Infernal Magma Titan** (900 HP)
-- **Attacks:** Bouncing Magma Orb barrages (deflectable!), Magma Eruption ground slams, Lava Leaps.
-
-### ❄️ Level 4: The Frozen Crypts
-- **Atmosphere:** Glacial aurora sky, icy stalactites, frost caverns, and slippery ledges.
-- **Boss:** **Frost Lich Sovereign** (1050 HP)
-- **Attacks:** Glacial Frost Shards (parry back to freeze the Lich for 3s!), Blizzard Nova, Teleportation.
-
-### ⚡ Level 5: The Tempest Spire
-- **Atmosphere:** Electrified storm clouds, thunder forks, floating gothic spires.
-- **Boss:** **Storm Thunder Archon** (1200 HP)
-- **Attacks:** High-speed Thunder Orbs (deflectable!), Sky Lightning strikes, Storm Dashes.
-
-### 🌌 Level 6: The Astral Void Sanctum
-- **Atmosphere:** Deep cosmic nebula, shattered celestial moon, cosmic constellations.
-- **Boss:** **Celestial Void Monarch - Lord of the Mysteries** (1400 HP)
-- **Attacks:** 7-to-9 Astral Starbursts, Dimensional Rift Phasing, Sky Lightning, Demon summons.
-
-### 👑 Level 7: The Abyssal Throne (The Final Showdown)
-- **Atmosphere:** Crimson eclipse void, colossal black hole, throne pillars of the ancient citadel.
-- **Boss:** **Abyssal Overlord Malakor - Reclaimer of the Relics** (1800 HP)
-- **Attacks:** 3 Climactic Phases!
-  - **Phase 1:** Chaos Orb barrages (5 orbs, deflectable!), Teleport strikes.
-  - **Phase 2:** Chaos & Magma Dual Barrages (8 orbs!), Minion portals, Sky meteor strikes.
-  - **Phase 3 (Apocalyptic Overdrive):** 12-orb radial bullet hell! Chain Parry Deflections and Rebound Overdrive to defeat Malakor and reclaim your stolen glory!
-
-### 🌌👑 Level 8: The Primordial Singularity Core (THE ULTIMATE BOSS REALM)
-- **Atmosphere:** Cosmic Singularity with accretion disk, shattered galaxies, colossal dark monolith spires, floating obsidian ruin pillars with glowing runes.
-- **Secret Room — The Ancient Astral Sanctum:**
-  - Hidden behind a breakable cracked wall at high altitude ($X=1570, Y=180$).
-  - Features floating astral crystals and the legendary **God Relic Shrine**.
-  - Awakening the shrine bestows **$+1,500$ Max HP**, **$+500$ Max MP**, accelerated mana regeneration, **$+35\%$ movement speed**, **$+60\%$ damage**, **$+50\%$ Rebound meter rate**, and unlocks the player's ultimate abilities!
-- **The Ultimate Supreme Boss:** **PRIMORDIAL VOID EMPEROR MALAKOR** (**10,000 HP**)
-- **Dedicated Systems & 8 Core Ability Trees:**
-  1. **Teleportation:** Instantly phases behind player for ambush combos; teleports randomly across the arena; dark vortex rifts with audio/visual feedback; dynamic cooldowns (3.5s $\to$ 1.0s).
-  2. **Super Speed:** Sprints at supersonic speeds (220 $\to$ 550 px/s) with rapid acceleration; high-speed dash attacks (850-1000 px/s); fading motion trail ghosts (`BossGhostTrail`); instant responsive turning.
-  3. **Stun Attack:** Channels electric dark lightning, firing an expanding `ElectricShockwave` that deals damage and applies an active 1.8s stun lock to the player; visual orbiting stun sparks and electric flashing over player. Deflectable via Timed Parry!
-  4. **Dark Energy Attack:** 
-     - **Multi-Orb Barrage:** 5 to 14 dark energy balls with homing tendrils (deflectable by timed parry for $3\times$ speed & damage!).
-     - **Massive Void Explosion:** Telegraph warning circle followed by colossal screen-shaking dark blast (50+ AoE dmg).
-     - **Full-Screen Dark Energy Beam:** Red laser aim guide telegraph charging into a devastating full-screen destructive beam.
-  5. **Special Abilities:**
-     - **Minion Summoning:** Spawns flying bats, shadow monsters, and fire demons from void portals.
-     - **Protective Shield:** Spawns a 1,000 HP glowing hexagonal void barrier absorbing all damage until shattered.
-     - **Health Regeneration:** Channels dark siphon runes recovering 350 HP/tick (+1,050 HP total).
-     - **Ground Slam & Energy Waves:** Leaps high, plunges violently at 1250 px/s, releasing twin high-speed ground-slicing energy waves left and right.
-  6. **4-Phase System & Appearance Transformations:**
-     - **Phase 1 (10,000 - 7,500 HP):** Obsidian Void Armor with Deep Violet Aura (Scale $1.1\times$, Speed 220 px/s).
-     - **Phase 2 (7,500 - 5,000 HP):** Crimson Void Surge with glowing red eye flares & fire trail (Speed 320 px/s, contact damage +30%, dash attacks, stun shockwave, minion summons).
-     - **Phase 3 (5,000 - 2,500 HP):** Astral Cosmic Electric Cyan with celestial wings (Speed 420 px/s, instant teleport behind player combos, protective shield, dark energy beam, health regen).
-     - **Phase 4 (2,500 - 0 HP):** Supreme Apocalyptic Rage Mode (Solar Gold Overdrive glow, Speed 550 px/s, massive triple explosions, full-screen beams, 14-orb spiral bullet hell, relentless rage roaring!).
-  7. **Dedicated Large Boss Health Bar UI:**
-     - Displays title, active phase badges (`[PHASE 1]` to `[PHASE 4: ULTIMATE RAGE]`), numerical HP (`10,000 / 10,000 HP (100%)`), and smooth animated bar with phase-shifting glow colors.
-  8. **All 9 Dedicated Animations:** `idle`, `running`, `teleporting`, `attacking`, `dashing`, `taking_damage`, `stunned`, `ultimate_attack`, `death`.
+| Action | Primary Key | Alternate | Description |
+|---|---|---|---|
+| **Move Left / Right** | `A` / `D` | `←` / `→` | Smooth physics-based running |
+| **Jump** | `Space` | `W` / `↑` | Jump with variable height cut & coyote time |
+| **Fireball** | `J` | Left Mouse Click | Ricocheting spell (1x $\to$ 2x $\to$ 3x DMG). Rocket-jumps when aimed down |
+| **Freeze Power** | `K` | — | Ice Blast that freezes enemies in ice for 4s |
+| **Parry / Deflect** | Right Mouse Click | `Shift` | Reflects enemy projectiles at 3x speed and 3x damage |
+| **Restart Checkpoint**| `R` | — | Respawn at last reached checkpoint |
+| **Pause Menu** | `Esc` | `P` | Resume, Restart, Level Select, Main Menu |
 
 ---
 
-## 🧙‍♂️ Enhanced Player Archmage & Ultimate Powers
-
-- **Custom Enhanced Sprite**: High-contrast, handcrafted dark hooded archmage character with ceremonial gold-trimmed robes and a wizard staff crowned by a glowing cosmic purple orb.
-- **Complete 32 Animation Frames Across 8 Sets**: `idle` (4f), `run` (6f), `jump` (2f), `fall` (2f), `attack` (4f), `hurt` (2f), `death` (6f), and `respawn` (6f).
-- **Astral Void Cannon `[E]`**: Fires a high-velocity celestial projectile dealing 650 base damage that pierces boss shields directly and ricochets up to 4 times ($+50\%$ damage per bounce). Features heavy rocket-jumping recoil.
-- **Chronos Shadow Step `[F]`**: 220 px spatial dash with directional aiming. Leaves motion-trail ghost duplicates (`BossGhostTrail`), erupts with teleport vortex bursts, grants invulnerability frames, and breaks active stuns instantly.
+## 💀 Persistent Death & Respawn Tracking
+- **Live HUD Display:** Tracks deaths and respawns in real-time (`💀 Deaths: X  |  🔄 Respawns: Y`).
+- **Main Menu Career Stats:** Saves overall player career statistics to `user://mystic_realms_save.json`.
+- **Game Over & Victory Screens:** Summarizes stats upon completion or defeat.
 
 ---
 
-## 🕹️ Controls
-
-| Control | Action | Effect |
-|---|---|---|
-| **A / D** or **← / →** | Move Left / Right | Smooth physics movement |
-| **Space** or **W** | Jump | Platformer jump with variable cut & coyote time |
-| **Left-Click** or **J** | Fireball (Ricochet) | Bounces off walls ($1\times \to 2\times \to 3\times$ dmg). Rocket-jumps when aimed down |
-| **Right-Click** or **Shift / I** | Parry / Deflect | Reflects enemy projectiles at $3\times$ speed & stun |
-| **K** | Ice Blast | Bouncing frost bolt that freezes enemies solid |
-| **L** | Lightning Strike | Thunder strike on forward enemies (95 dmg) |
-| **I** | Magic Shield | Protective rune dome negating all damage |
-| **E** | Astral Void Cannon | Celestial beam piercing shields with 4-wall ricochet ($+50\%$/bounce) |
-| **F** | Chronos Shadow Step | 220px spatial dash with invulnerability, ghost trail, and stun cleanse |
-| **Q** | Rebound Overdrive | Radial shockwave + 5s Rapid Fire & 5x Ricochet |
-| **R** | Restart Checkpoint | Respawn at active checkpoint |
-| **Esc** or **P** | Pause Menu | Resume, Restart, Level Select, Main Menu |
+## 🎵 Featured Music
+- **Title:** *"Lord of Mysteries - Dark Dream"*
+- **Artist:** Curley Gao
+- **Path:** `assets/music/dark_dream.mp3`
 
 ---
 
-## 🚀 How to Run and Play
+## 🚀 Running the Game
 
-### Method 1: Launch Godot 4 Directly
+### In Godot Engine
+Open the project directory in **Godot 4.x** (compatible with 4.2+ / 4.7+ Forward+).
+- **Default Main Scene:** `scenes/intro/intro_splash_3d.tscn` (plays the 3D cinematic opening, then loads Main Menu).
+- **Direct Level Launch:**
+  ```bash
+  # Final Battle
+  godot scenes/levels/final_battle.tscn
+
+  # Tutorial Grounds
+  godot scenes/levels/level_tutorial.tscn
+  ```
+
+### Automated In-Engine Test Suite
+Run the automated test runner headless to verify all systems:
 ```bash
-# Launch the full game starting at Main Menu:
-/Users/naralanaveen/Downloads/Godot.app/Contents/MacOS/Godot
-
-# Or launch directly into Level 8 (Ultimate Boss):
-/Users/naralanaveen/Downloads/Godot.app/Contents/MacOS/Godot scenes/levels/level_8.tscn
-
-# Or jump to any level (level_1 through level_8):
-/Users/naralanaveen/Downloads/Godot.app/Contents/MacOS/Godot scenes/levels/level_1.tscn
+godot --headless scenes/tests/test_runner.tscn
 ```
+*All 13 automated test suites pass with 100% success rate.*
 
-### Method 2: Run Automated In-Engine Test Suite (13/13 Suites 100% Pass)
-```bash
-/Users/naralanaveen/Downloads/Godot.app/Contents/MacOS/Godot --headless scenes/tests/test_runner.tscn
-```
+---
+
+## 📜 Credits & License
+- **Developed by:** Dhoni and Prathik
+- **Game Jam Theme:** BOUNCE BACK
+- **Engine:** Godot 4.x
+- **Platform:** macOS, Windows, Linux

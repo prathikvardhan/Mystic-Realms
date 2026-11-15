@@ -120,7 +120,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -110.0
-offset_top = -320.0
+offset_top = -250.0
 offset_right = 110.0
 offset_bottom = -30.0
 grow_horizontal = 2
@@ -143,27 +143,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Adventure"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="IntroBtn" type="TextureButton" parent="VBoxButtons"]
-custom_minimum_size = Vector2(220, 42)
-layout_mode = 2
-texture_normal = ExtResource("5_btn")
-texture_pressed = ExtResource("7_prs")
-texture_hover = ExtResource("6_hov")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="VBoxButtons/IntroBtn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "3D Entry Animation"
+text = "⚔️ Final Battle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -183,11 +163,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Tutorial Grounds"
+text = "✨ Tutorial Grounds"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LevelSelectBtn" type="TextureButton" parent="VBoxButtons" unique_id=560083781]
+[node name="IntroBtn" type="TextureButton" parent="VBoxButtons"]
 custom_minimum_size = Vector2(220, 42)
 layout_mode = 2
 texture_normal = ExtResource("5_btn")
@@ -196,14 +176,14 @@ texture_hover = ExtResource("6_hov")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="VBoxButtons/LevelSelectBtn" unique_id=800147077]
+[node name="Label" type="Label" parent="VBoxButtons/IntroBtn"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level Selection"
+text = "🎬 3D Entry Animation"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -223,12 +203,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Exit Game"
+text = "🚪 Exit Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxButtons/StartBtn" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxButtons/IntroBtn" to="." method="_on_intro_pressed"]
 [connection signal="pressed" from="VBoxButtons/TutorialBtn" to="." method="_on_tutorial_pressed"]
-[connection signal="pressed" from="VBoxButtons/LevelSelectBtn" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="VBoxButtons/IntroBtn" to="." method="_on_intro_pressed"]
 [connection signal="pressed" from="VBoxButtons/QuitBtn" to="." method="_on_quit_pressed"]

@@ -17,7 +17,7 @@ outline_color = Color(0.1, 0.05, 0.15, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_btn"]
 font = ExtResource("7_pixelfont")
-font_size = 11
+font_size = 12
 font_color = Color(1, 1, 1, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
@@ -48,10 +48,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -240.0
-offset_right = 300.0
-offset_bottom = 240.0
+offset_left = -220.0
+offset_top = -140.0
+offset_right = 220.0
+offset_bottom = 140.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_panel")
@@ -66,22 +66,22 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
-offset_top = 16.0
+offset_top = 20.0
 offset_right = -20.0
-offset_bottom = -16.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 14
 alignment = 1
 
 [node name="Title" type="Label" parent="NinePatchRect/VBox"]
 layout_mode = 2
-text = "SELECT REALM (8 LEVELS & BOSSES)"
+text = "SELECT REALM"
 label_settings = SubResource("LabelSettings_title")
 horizontal_alignment = 1
 
 [node name="TutorialBtn" type="TextureButton" parent="NinePatchRect/VBox"]
-custom_minimum_size = Vector2(300, 36)
+custom_minimum_size = Vector2(320, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("4_btn")
@@ -97,181 +97,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "✨ 0: Tutorial (The Training Grounds) ✨"
+text = "✨ Tutorial Grounds ✨"
 label_settings = SubResource("LabelSettings_btn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Grid" type="GridContainer" parent="NinePatchRect/VBox"]
+[node name="FinalBattleBtn" type="TextureButton" parent="NinePatchRect/VBox"]
+custom_minimum_size = Vector2(320, 40)
 layout_mode = 2
-theme_override_constants/h_separation = 12
-theme_override_constants/v_separation = 8
-columns = 2
-
-[node name="Level1Btn" type="TextureButton" parent="NinePatchRect/VBox/Grid"]
-custom_minimum_size = Vector2(270, 36)
-layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("4_btn")
 texture_pressed = ExtResource("6_prs")
 texture_hover = ExtResource("5_hov")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="NinePatchRect/VBox/Grid/Level1Btn"]
+[node name="Label" type="Label" parent="NinePatchRect/VBox/FinalBattleBtn"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1: Enchanted Forest (Behemoth)"
-label_settings = SubResource("LabelSettings_btn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Level2Btn" type="TextureButton" parent="NinePatchRect/VBox/Grid"]
-custom_minimum_size = Vector2(270, 36)
-layout_mode = 2
-texture_normal = ExtResource("4_btn")
-texture_pressed = ExtResource("6_prs")
-texture_hover = ExtResource("5_hov")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="NinePatchRect/VBox/Grid/Level2Btn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "2: Dark Castle (Dark Wizard)"
-label_settings = SubResource("LabelSettings_btn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Level3Btn" type="TextureButton" parent="NinePatchRect/VBox/Grid"]
-custom_minimum_size = Vector2(270, 36)
-layout_mode = 2
-texture_normal = ExtResource("4_btn")
-texture_pressed = ExtResource("6_prs")
-texture_hover = ExtResource("5_hov")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="NinePatchRect/VBox/Grid/Level3Btn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "3: Molten Caverns (Magma Titan)"
-label_settings = SubResource("LabelSettings_btn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Level4Btn" type="TextureButton" parent="NinePatchRect/VBox/Grid"]
-custom_minimum_size = Vector2(270, 36)
-layout_mode = 2
-texture_normal = ExtResource("4_btn")
-texture_pressed = ExtResource("6_prs")
-texture_hover = ExtResource("5_hov")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="NinePatchRect/VBox/Grid/Level4Btn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "4: Frozen Crypts (Frost Lich)"
-label_settings = SubResource("LabelSettings_btn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Level5Btn" type="TextureButton" parent="NinePatchRect/VBox/Grid"]
-custom_minimum_size = Vector2(270, 36)
-layout_mode = 2
-texture_normal = ExtResource("4_btn")
-texture_pressed = ExtResource("6_prs")
-texture_hover = ExtResource("5_hov")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="NinePatchRect/VBox/Grid/Level5Btn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "5: Tempest Spire (Storm Archon)"
-label_settings = SubResource("LabelSettings_btn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Level6Btn" type="TextureButton" parent="NinePatchRect/VBox/Grid"]
-custom_minimum_size = Vector2(270, 36)
-layout_mode = 2
-texture_normal = ExtResource("4_btn")
-texture_pressed = ExtResource("6_prs")
-texture_hover = ExtResource("5_hov")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="NinePatchRect/VBox/Grid/Level6Btn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "6: Astral Void (Void Monarch)"
-label_settings = SubResource("LabelSettings_btn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Level7Btn" type="TextureButton" parent="NinePatchRect/VBox/Grid"]
-custom_minimum_size = Vector2(270, 36)
-layout_mode = 2
-texture_normal = ExtResource("4_btn")
-texture_pressed = ExtResource("6_prs")
-texture_hover = ExtResource("5_hov")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="NinePatchRect/VBox/Grid/Level7Btn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "7: Abyssal Throne (Malakor)"
-label_settings = SubResource("LabelSettings_btn")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Level8Btn" type="TextureButton" parent="NinePatchRect/VBox/Grid"]
-custom_minimum_size = Vector2(270, 36)
-layout_mode = 2
-texture_normal = ExtResource("4_btn")
-texture_pressed = ExtResource("6_prs")
-texture_hover = ExtResource("5_hov")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="NinePatchRect/VBox/Grid/Level8Btn"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "8: Singularity Core (ULTIMATE BOSS)"
+text = "⚔️ Final Battle (Void Dimension) ⚔️"
 label_settings = SubResource("LabelSettings_btn")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -299,12 +147,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="NinePatchRect/VBox/TutorialBtn" to="." method="_on_tutorial_pressed"]
-[connection signal="pressed" from="NinePatchRect/VBox/Grid/Level1Btn" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="NinePatchRect/VBox/Grid/Level2Btn" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="NinePatchRect/VBox/Grid/Level3Btn" to="." method="_on_level_3_pressed"]
-[connection signal="pressed" from="NinePatchRect/VBox/Grid/Level4Btn" to="." method="_on_level_4_pressed"]
-[connection signal="pressed" from="NinePatchRect/VBox/Grid/Level5Btn" to="." method="_on_level_5_pressed"]
-[connection signal="pressed" from="NinePatchRect/VBox/Grid/Level6Btn" to="." method="_on_level_6_pressed"]
-[connection signal="pressed" from="NinePatchRect/VBox/Grid/Level7Btn" to="." method="_on_level_7_pressed"]
-[connection signal="pressed" from="NinePatchRect/VBox/Grid/Level8Btn" to="." method="_on_level_8_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBox/FinalBattleBtn" to="." method="_on_final_battle_pressed"]
 [connection signal="pressed" from="NinePatchRect/VBox/BackBtn" to="." method="_on_back_pressed"]

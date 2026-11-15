@@ -77,7 +77,7 @@ offset_bottom = 120.0
 [node name="VBoxBars" type="VBoxContainer" parent="HUDPanel"]
 layout_mode = 0
 offset_right = 180.0
-offset_bottom = 78.0
+offset_bottom = 50.0
 theme_override_constants/separation = 4
 
 [node name="HPBar" type="TextureProgressBar" parent="HUDPanel/VBoxBars"]
@@ -118,30 +118,11 @@ label_settings = SubResource("LabelSettings_bar")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ReboundBar" type="TextureProgressBar" parent="HUDPanel/VBoxBars"]
-layout_mode = 2
-value = 0.0
-texture_under = ExtResource("2_bg")
-texture_progress = ExtResource("14_reb")
-texture_progress_offset = Vector2(2, 2)
-
-[node name="ReboundLabel" type="Label" parent="HUDPanel/VBoxBars/ReboundBar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "REBOUND: 0%"
-label_settings = SubResource("LabelSettings_bar")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="HBoxCrystals" type="HBoxContainer" parent="HUDPanel"]
 layout_mode = 0
-offset_top = 84.0
+offset_top = 56.0
 offset_right = 120.0
-offset_bottom = 108.0
+offset_bottom = 80.0
 theme_override_constants/separation = 6
 
 [node name="CrystalIcon" type="TextureRect" parent="HUDPanel/HBoxCrystals"]
@@ -157,9 +138,9 @@ vertical_alignment = 1
 
 [node name="HBoxStats" type="HBoxContainer" parent="HUDPanel"]
 layout_mode = 0
-offset_top = 110.0
+offset_top = 84.0
 offset_right = 240.0
-offset_bottom = 130.0
+offset_bottom = 104.0
 theme_override_constants/separation = 12
 
 [node name="DeathLabel" type="Label" parent="HUDPanel/HBoxStats"]
@@ -180,9 +161,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -160.0
+offset_left = -46.0
 offset_top = -60.0
-offset_right = 160.0
+offset_right = 46.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -263,198 +244,6 @@ offset_right = -2.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "K"
-label_settings = SubResource("LabelSettings_key")
-horizontal_alignment = 2
-
-[node name="SlotLightning" type="Control" parent="AbilitiesBar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="Icon" type="TextureRect" parent="AbilitiesBar/SlotLightning"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_lt")
-
-[node name="CDProgress" type="TextureProgressBar" parent="AbilitiesBar/SlotLightning"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-fill_mode = 5
-texture_progress = ExtResource("10_cd")
-
-[node name="LockOverlay" type="TextureRect" parent="AbilitiesBar/SlotLightning"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_lock")
-
-[node name="KeyLabel" type="Label" parent="AbilitiesBar/SlotLightning"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -14.0
-offset_top = -14.0
-offset_right = -2.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "L"
-label_settings = SubResource("LabelSettings_key")
-horizontal_alignment = 2
-
-[node name="SlotShield" type="Control" parent="AbilitiesBar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="Icon" type="TextureRect" parent="AbilitiesBar/SlotShield"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_sh")
-
-[node name="CDProgress" type="TextureProgressBar" parent="AbilitiesBar/SlotShield"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-fill_mode = 5
-texture_progress = ExtResource("10_cd")
-
-[node name="LockOverlay" type="TextureRect" parent="AbilitiesBar/SlotShield"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_lock")
-
-[node name="KeyLabel" type="Label" parent="AbilitiesBar/SlotShield"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -14.0
-offset_top = -14.0
-offset_right = -2.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "I"
-label_settings = SubResource("LabelSettings_key")
-horizontal_alignment = 2
-
-[node name="SlotVoidCannon" type="Control" parent="AbilitiesBar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="Icon" type="TextureRect" parent="AbilitiesBar/SlotVoidCannon"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("20_void")
-
-[node name="CDProgress" type="TextureProgressBar" parent="AbilitiesBar/SlotVoidCannon"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-fill_mode = 5
-texture_progress = ExtResource("10_cd")
-
-[node name="LockOverlay" type="TextureRect" parent="AbilitiesBar/SlotVoidCannon"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_lock")
-
-[node name="KeyLabel" type="Label" parent="AbilitiesBar/SlotVoidCannon"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -14.0
-offset_top = -14.0
-offset_right = -2.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "E"
-label_settings = SubResource("LabelSettings_key")
-horizontal_alignment = 2
-
-[node name="SlotShadowStep" type="Control" parent="AbilitiesBar"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-
-[node name="Icon" type="TextureRect" parent="AbilitiesBar/SlotShadowStep"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("21_step")
-
-[node name="CDProgress" type="TextureProgressBar" parent="AbilitiesBar/SlotShadowStep"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-fill_mode = 5
-texture_progress = ExtResource("10_cd")
-
-[node name="LockOverlay" type="TextureRect" parent="AbilitiesBar/SlotShadowStep"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("11_lock")
-
-[node name="KeyLabel" type="Label" parent="AbilitiesBar/SlotShadowStep"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -14.0
-offset_top = -14.0
-offset_right = -2.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "F"
 label_settings = SubResource("LabelSettings_key")
 horizontal_alignment = 2
 

@@ -239,7 +239,7 @@ checkpoint_id = 1
 
 [node name="Sign2_Cast" parent="." instance=ExtResource("12_sign")]
 position = Vector2(520, 420)
-message = "CASTING & WALL RICOCHET:\nAim with your Mouse (or face your target)\n[Left-Click] or [J] = Cast Fireball!\nFireballs ricochet off walls for 2x & 3x DMG!\nHit the ancient stone shrine ahead!"
+message = "CASTING & WALL RICOCHET:\nAim with your Mouse (or face your target)\n[Left-Click] or [J] = Cast Fireball!\n[K] = Cast Ice Blast (Freeze Enemies)!\nFireballs ricochet off walls for 2x & 3x DMG!\nHit the ancient stone shrine ahead!"
 
 [node name="RuinedShrine" parent="." instance=ExtResource("22_shrine")]
 position = Vector2(760, 410)
@@ -278,7 +278,7 @@ position = Vector2(2080, 170)
 
 [node name="Sign5_Victory" parent="." instance=ExtResource("12_sign")]
 position = Vector2(1920, 204)
-message = "🏆 YOU HAVE MASTERED MAGICAL RECOIL!\nYou can rocket jump anytime in the adventure to evade bosses,\nclimb secret ledges, and soar across chasms!\nEnter the portal to begin Level 1!"
+message = "🏆 YOU HAVE MASTERED MAGICAL RECOIL!\nYou can rocket jump anytime in battle to evade attacks,\nclimb secret ledges, and soar across chasms!\nEnter the portal to begin the Final Battle!"
 
 [node name="LevelPortal" parent="." instance=ExtResource("14_port")]
 position = Vector2(2150, 204)

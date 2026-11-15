@@ -51,38 +51,17 @@ func _show_bounce_back_intro() -> void:
 	
 	var titles = {
 		0: "✨ TUTORIAL: THE TRAINING GROUNDS ✨",
-		1: "⚡ BOUNCE BACK: FROM ASHES TO POWER (LEVEL 1) ⚡",
-		2: "⚡ BOUNCE BACK: THE DARK CASTLE (LEVEL 2) ⚡",
-		3: "⚡ BOUNCE BACK: THE MOLTEN CAVERNS (LEVEL 3) ⚡",
-		4: "⚡ BOUNCE BACK: THE FROZEN CRYPTS (LEVEL 4) ⚡",
-		5: "⚡ BOUNCE BACK: THE TEMPEST SPIRE (LEVEL 5) ⚡",
-		6: "⚡ BOUNCE BACK: THE ASTRAL VOID (LEVEL 6) ⚡",
-		7: "⚡ BOUNCE BACK: THE ABYSSAL THRONE — FINAL BATTLE (LEVEL 7) ⚡",
-		8: "👑 BOUNCE BACK: PRIMORDIAL SINGULARITY CORE — ULTIMATE BOSS (LEVEL 8) 👑"
+		8: "👑 FINAL BATTLE: THE PRIMORDIAL VOID EMPEROR 👑"
 	}
 	
 	var missions = {
-		0: "Welcome Wizard! Follow the tutorial signs to master movement,\nricochet fireball casting, timed parry, and rocket jumping!",
-		1: "Stripped of your legendary relics by the Abyssal Overlord...\nAwaken from the lowest abyss and fight back to the surface!",
-		2: "Infiltrate the Dark Castle and confront the Dark Wizard - Lord of Shadows!\nBeware of molten lava pits and hidden spike traps.",
-		3: "Descend into the Molten Inferno and defeat the Infernal Magma Titan!\nSurvive deadly lava geysers and burning magma orbs.",
-		4: "Brave the permafrost of the Frozen Crypts to slay the Frost Lich Sovereign!\nFreezing winds slow your advance.",
-		5: "Ascend the electric heights of the Tempest Spire and conquer the Storm Thunder Archon!\nRide the thunder gale.",
-		6: "Enter the cosmic Sanctum of the Mysteries and defeat the Celestial Void Monarch!\nDimensions unravel around you.",
-		7: "THE SUPREME FINAL SHOWDOWN! Defeat Abyssal Overlord Malakor\nand reclaim the Stolen Celestial Relic once and for all!",
-		8: "THE TRUE COSMIC APOCALYPSE! Confront Primordial Void Emperor Malakor!\n10,000 HP • 4 Multi-Phase Transformations • Supersonic Dashes • Stun Waves • Ultimate Rage Mode!"
+		0: "Welcome Wizard! Follow the tutorial signs to master movement,\nricochet fireball casting, freeze power, and rocket jumping!",
+		8: "THE ULTIMATE FINAL BATTLE! Confront Primordial Void Emperor Malakor!\n10,000 HP • 4 Multi-Phase Transformations • Fireball [J] & Freeze Power [K]!"
 	}
 	
 	var tips = {
 		0: "TUTORIAL: Read each sign ahead! Aim downward with mouse or [S] to Rocket-Jump!",
-		1: "THEME TIP: Fireballs ricochet off walls (1x->2x->3x DMG)! Right-Click / [Shift] to Parry!",
-		2: "THEME TIP: Timed Parry deflects dark orbs at 3x speed & stun! Awaken Ruined Shrines for buffs!",
-		3: "THEME TIP: Aim downward with mouse or hold [S] to Rocket-Jump over bottomless lava pits!",
-		4: "THEME TIP: Deflect the Frost Lich's shards back into him to freeze him in place!",
-		5: "THEME TIP: Near-misses charge your Rebound Meter! Press [Q] at 100% for 5s Overdrive!",
-		6: "THEME TIP: Overdrive gives 5-bounce mega ricochets and machine-gun cast rates!",
-		7: "THEME TIP: Chain Parry Deflections and Rebound Shockwaves to conquer the Overlord!",
-		8: "THEME TIP: Timed Parry deflects Dark Orbs for 3x damage! Jump over Ground Waves! Crack his Shield with Ricochet Spells!"
+		8: "COMBAT TIP: Fireball [J] and Freeze [K]! Ricochet your spells off platforms for 2x & 3x damage!"
 	}
 	
 	var title = Label.new()

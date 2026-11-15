@@ -87,10 +87,6 @@ func _physics_process(delta: float) -> void:
 		GameManager.respawn_player()
 		return
 
-	# Handle Q key Rebound Overdrive
-	if Input.is_action_just_pressed("rebound"):
-		GameManager.trigger_rebound_overdrive(global_position)
-
 	# Handle Parry/Deflect (Right-Click, Shift, or I key)
 	if (Input.is_action_just_pressed("parry") or Input.is_action_just_pressed("mouse_parry")) and parry_cooldown <= 0.0:
 		_perform_parry()
@@ -201,21 +197,9 @@ func _handle_spells() -> void:
 	# Fireball (J or Left-Click)
 	if Input.is_action_just_pressed("fireball") or Input.is_action_just_pressed("mouse_attack"):
 		_try_cast("fireball", _cast_fireball)
-	# Ice Blast (K)
+	# Freeze Power / Ice Blast (K)
 	elif Input.is_action_just_pressed("ice_blast"):
 		_try_cast("ice_blast", _cast_ice_blast)
-	# Lightning Strike (L)
-	elif Input.is_action_just_pressed("lightning"):
-		_try_cast("lightning", _cast_lightning)
-	# Magic Shield (I)
-	elif Input.is_action_just_pressed("shield"):
-		_try_cast("shield", _cast_shield)
-	# Astral Void Cannon (E)
-	elif Input.is_action_just_pressed("void_cannon"):
-		_try_cast("void_cannon", _cast_void_cannon)
-	# Chronos Shadow Step (F)
-	elif Input.is_action_just_pressed("shadow_step"):
-		_try_cast("shadow_step", _cast_shadow_step)
 
 func _get_aim_direction() -> Vector2:
 	# If mouse was clicked or is far from player, aim towards mouse
