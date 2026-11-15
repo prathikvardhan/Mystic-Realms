@@ -112,6 +112,22 @@ A complete, polished fantasy action-adventure platformer built in **Godot 4.x**,
 
 ## 🚀 Running the Game
 
+### 1. Get the files
+**Option A — Download ZIP (easiest):** Click the green **`<> Code`** button on this page → **Download ZIP** → unzip anywhere.
+
+**Option B — Clone with Git:**
+```bash
+git clone https://github.com/prathikvardhan/Mystic-Realms.git
+cd Mystic-Realms
+```
+
+### 2. Install Godot
+Download the free engine from [godotengine.org/download](https://godotengine.org/download) (standard **Godot 4.7** — no C#/.NET build needed).
+
+### 3. Open and play
+In the Godot Project Manager, click **Import** → select the `project.godot` file inside the folder → **Import & Edit** → press **F5**.
+The engine will import all assets automatically on first open (this takes a minute or two), then the 3D cinematic intro plays.
+
 ### In Godot Engine
 Open the project directory in **Godot 4.x** (compatible with 4.2+ / 4.7+ Forward+).
 - **Default Main Scene:** `scenes/intro/intro_splash_3d.tscn` (plays the 3D cinematic opening, then loads Main Menu).
